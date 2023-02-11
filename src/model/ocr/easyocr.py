@@ -7,7 +7,7 @@ import yaml
 
 
 class EasyOCRCustom:
-    def __init__(self, device=None):
+    def __init__(self, model_params, device=None):
         if device is None:
             self.device = torch.device(
                 "cuda:0" if torch.cuda.is_available() else "cpu"
@@ -19,10 +19,7 @@ class EasyOCRCustom:
         if self.device.type == "cuda":
             use_gpu = True
 
-        with open("./src/configs/models/custom_easyocr.yaml") as file:
-            inference_params = yaml.safe_load(file)
-
-        self.ocr_model = easyocr.Reader(**inference_params, gpu=use_gpu)
+        self.ocr_model = easyocr.Reader(**model_params, gpu=use_gpu)
 
     def __call__(self, image: np) -> str:
         prediction = self.ocr_model.recognize(
