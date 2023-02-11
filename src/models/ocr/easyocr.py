@@ -3,7 +3,6 @@ import re
 import easyocr
 import numpy as np
 import torch
-import yaml
 
 
 class EasyOCRCustom:
