@@ -2,7 +2,7 @@
 
 
 # Pipeline
-
+![Pipeline](./data/pipeline.png)
 # Структура проекта
 
 Мое решение состоит из трех основных частей:
@@ -42,8 +42,13 @@ chmod +x load_data.sh
 ./load_data.sh
 ```
 
+# Потенциальные улучшения
+1. В данный момент используются веса, которые обучены только на российские номера. Следующим шагом может стать расширение выборки.
+2. Для уточнения точности решения можно добавить проверку итогового результата с помощью регулярных выражений.
+3. Для повышения качества на нестандартных номерах можно сгенерировать синтетический набор данных на базе существующего. 
+4. Для проверки на принадлежность к определенному ведомству можно использовать RGB изображение номера после этапа детекции.
+
 # Ссылки: 
 1. [Выделение автомобильного номера](https://github.com/In48semenov/Car-numbers)
-1. [License Plate Detection Pytorch](https://github.com/xuexingyu24/License_Plate_Detection_Pytorch)
-2. [YOLO V5](https://github.com/ultralytics/yolov5)
-3. 
+2. [License Plate Detection Pytorch](https://github.com/xuexingyu24/License_Plate_Detection_Pytorch)
+3. [YOLO V5](https://github.com/ultralytics/yolov5)
