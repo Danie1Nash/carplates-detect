@@ -1,4 +1,3 @@
-import numpy as np
 import torch
 from PIL import Image
 
@@ -20,14 +19,5 @@ class YoloInference:
 
     def __call__(self, img: Image):
         results = self.model(img)
-
-        if len(results.pandas().xyxy) > 0 and (
-            not results.pandas().xyxy[0].empty
-        ):
-            xmin = results.pandas().xyxy[0]["xmin"].iloc[0]
-            ymin = results.pandas().xyxy[0]["ymin"].iloc[0]
-            xmax = results.pandas().xyxy[0]["xmax"].iloc[0]
-            ymax = results.pandas().xyxy[0]["ymax"].iloc[0]
-            return [[xmin, ymin, xmax, ymax]]
-        else:
-            return None
+        bboxs = results.xyxy[0][:, :4].tolist()
+        return bboxs
