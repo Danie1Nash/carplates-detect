@@ -5,7 +5,7 @@ import numpy as np
 import torch
 
 
-class EasyOCRCustom:
+class EasyOCRInference:
     def __init__(self, model_params, device=None):
         if device is None:
             self.device = torch.device(

@@ -11,15 +11,12 @@ class Inference:
         self,
         detect_model,
         ocr_model,
+        transform_model=None,
         plot_graph: bool = True,
     ):
-        """
-        detect_model (str): yolo / frcnn / mtcnn
-        ocr_model (str): easyocr / easyocr_custom / lpr_custom
-        """
         self.detect_model = detect_model
         self.ocr_model = ocr_model
-        self.transform_model = None
+        self.transform_model = transform_model
 
         self.plot_graph = plot_graph
 

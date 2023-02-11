@@ -1,5 +1,5 @@
-from .easyocr import EasyOCRCustom
+from .easyocr import EasyOCRInference
 
 __all__ = [
-    "EasyOCRCustom",
+    "EasyOCRInference",
 ]
