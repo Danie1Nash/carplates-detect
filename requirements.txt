@@ -1,0 +1,6 @@
+torch==1.13.1
+torchvision==0.14.1
+numpy==1.24.2
+numpy==1.24.2
+gdown==4.6.2
+easyocr==1.6.2

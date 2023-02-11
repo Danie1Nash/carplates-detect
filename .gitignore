@@ -93,3 +93,7 @@ target/
 
 # Enviroment file 
 .env
+
+# Weights folder
+/weights/**
+!/weights/.gitkeep
